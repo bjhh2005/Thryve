@@ -1,6 +1,19 @@
 # Thryve
 ## 项目设计
 
+```mermaid
+gantt
+    title Time
+    dateFormat  YYYY-MM-DD
+    excludes    sunday
+
+    section 前期
+    前期谈论:done , 2025-3-7 , 14d
+    个人软件质量分析,2025-3-7, 6d
+    
+```
+
+
 ### 面向文档类型
 
 | 文档类型     | 对应功能                                |

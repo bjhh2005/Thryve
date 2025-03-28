@@ -3,13 +3,25 @@
 
 ```mermaid
 gantt
-    title Time
+    title 项目推进路线图
     dateFormat  YYYY-MM-DD
     excludes    sunday
 
     section 前期
-    前期谈论:active , 2025-02-16, 2025-04-01
-    个人软件质量分析:crit, 2025-3-1 , 13d
+    需求分析      :active, 2025-02-16, 2025-02-28
+    技术预研      :crit, 2025-03-01, 13d
+    架构设计评审  : 2025-03-14, 3d
+
+    section 初期实现
+    原型系统搭建          :crit, 2025-03-17, 10d
+    核心算法验证          : 2025-03-20, 8d
+    数据管道开发          : 2025-03-25, 7d
+    UI交互原型设计        : 2025-03-17, 12d
+
+    section 初期验证阶段
+    性能基准测试  :crit, 2025-03-31, 5d
+    用户验收测试  : 2025-04-07, 7d
+    迭代优化      : 2025-04-14, 10d
     
 ```
 
@@ -45,7 +57,11 @@ gantt
 
 
 
-### 选择技术栈
+### 开发模型选择
+
+**增量模型**
+
+![img](https://i-blog.csdnimg.cn/blog_migrate/d82cb394defda6743b9f64af77c07c54.png)
 
 
 
@@ -66,10 +82,10 @@ https://github.com/leon-thomm/Ryven
 ### 技术栈建议
 
 #### 核心架构
-- **前端框架**: 推荐使用 **React + TypeScript**（生态丰富，社区活跃，适合复杂交互）
+- **前端框架**: 推荐使用 **React + JavaScript**（生态丰富，社区活跃，适合复杂交互）
 - **图形化编程界面**: 结合 **React Flow**（轻量级节点拖拽库） + **JointJS**（复杂连线逻辑处理）
 - **UI 美化**: **Ant Design/Material-UI**（组件库） + **Styled Components**（动态样式）
-- **跨平台支持**: **Electron**（桌面端）或 **Tauri**（轻量级 Rust 方案）
+- **跨平台支持**: **Tauri**（轻量级 Rust 方案）
 
 #### 后端与数据处理
 - **核心语言**: **Python**（依赖丰富的文件处理库，如 Pillow、PyPDF2、pandas）

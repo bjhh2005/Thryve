@@ -15,6 +15,13 @@ workflow-frontend/coverage/
 workflow-frontend/build/
 workflow-frontend/dist/
 
+# Tauri
+workflow-tauri/target/
+workflow-tauri/node_modules/
+workflow-tauri/dist/
+workflow-tauri/src-tauri/.rpt2_cache
+workflow-tauri/src-tauri/tauri.conf.local.json
+
 # 日志
 *.log
 npm-debug.log*

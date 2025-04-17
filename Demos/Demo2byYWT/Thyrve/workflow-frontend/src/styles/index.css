@@ -67,3 +67,16 @@
   .workflow-controls .anticon {
     margin-right: 4px;
   }
+
+  .app-container {
+  display: flex;
+  height: 100vh;
+  outline: none;
+}
+
+.workflow-area {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}

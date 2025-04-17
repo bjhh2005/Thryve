@@ -21,7 +21,11 @@ def execute_workflow():
         result = executor.execute()
         
         logger.info(f"Execution result: {result}")
-        return jsonify({"status": "success", "data": result})
+
+        if result["status"] == "error":
+            return jsonify({"status": "error", "message": result["message"]})
+        elif result["status"] == "success":
+            return jsonify({"status": "success", "data": result["data"]})
     except Exception as e:
         logger.error(f"Error executing workflow: {str(e)}")
         import traceback

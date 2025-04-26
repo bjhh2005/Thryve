@@ -116,11 +116,11 @@ class WorkflowExecutor:
             target_handle = edge['targetHandle']
 
             if source_id in adjacency:
-                adjacency[source_id]['out'].append((edge_id, target_id, target_handle))
+                adjacency[source_id]['out'].append((edge_id, target_id, source_handle))
 
             # "in" relationship: the node that is the target of this edge
             if target_id in adjacency:
-                adjacency[target_id]['in'].append((edge_id, source_id, source_handle))
+                adjacency[target_id]['in'].append((edge_id, source_id, target_handle))
 
 
         print("----------------------------------------------------")
@@ -140,8 +140,9 @@ class WorkflowExecutor:
         cur_node = self.node_instances[node_id]
         result = cur_node.run()
         next = cur_node.get_next()
-        in_handle = cur_node.get_in_handle()
-        return result,next,in_handle
+        out_handle = cur_node.get_out_handle()
+        back_node = cur_node.get_back()
+        return result,next,out_handle,back_node
 
     def execute(self):
         try:
@@ -151,19 +152,29 @@ class WorkflowExecutor:
             # 开始按照顺序执行节点
             cur_node = self.factory.find_start()
             next_node = "__WHU__"
-            in_handle = "__WHU__"
+            out_handle = "__WHU__"
 
+            back_stack = []
 
             while next_node is not None:
                 # 判断当前节点是否被实例化
                 print("cur_node:",cur_node)
                 if cur_node not in self.node_instances:
                     self.node_instances[cur_node] = self.factory.create_node_instance(cur_node)
-                result,next_node,in_handle = self.execute_node(cur_node)
                 
-                self.results.append({cur_node:result})
+                result,next_node,out_handle,back_node = self.execute_node(cur_node)
+                
+                if result:
+                    self.results.append({cur_node:result})
+
+                if back_node:
+                    back_stack.append(back_node)
+                
+                if not next_node and len(back_stack):
+                    next_node = back_stack.pop()
 
                 cur_node = next_node
+                    
 
             return {"status": "success", "data" : self.results}
   

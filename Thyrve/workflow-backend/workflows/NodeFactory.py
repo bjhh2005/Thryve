@@ -2,6 +2,7 @@ import logging
 from .nodes.start_node import StartNode
 from .ReactExection import ReactError
 from .nodes.print_node import PrintNode
+from .nodes.loop_node import LoopNode
 
 logger = logging.getLogger(__name__)
 
@@ -59,6 +60,8 @@ class NodeFactory:
                 return StartNode(node_id, node_next_data, data)
             case "print":
                 return PrintNode(node_id, node_next_data, data)
+            case "loop":
+                return LoopNode(node_id, node_next_data, data)
             case _:
                 raise ReactError(3, f"Unknown node type: {type}")
             

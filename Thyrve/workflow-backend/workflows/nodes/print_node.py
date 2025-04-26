@@ -14,7 +14,6 @@ class PrintNode(Node):
         self._in_handle = self._next_data["in"][0][2]
 
     def run(self):
-        print(self._node_data)
         if self._node_data["data"].get("content"):
             return self._node_data["data"]["content"]
         else:

@@ -15,7 +15,7 @@ import { executeWorkflow } from './services/api';
 import 'reactflow/dist/style.css';
 import './styles/index.css';
 import OutputConsole from './components/OutputConsole';  // 新增
-
+import { v4 as uuidv4 } from 'uuid';
 
 const App = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
@@ -113,7 +113,7 @@ const App = () => {
       };
 
       const newNode = {
-        id: `${type}-${Date.now()}`,
+        id: `${type}-${uuidv4()}`,
         type,
         position,
         data: { label: `${type} node` },

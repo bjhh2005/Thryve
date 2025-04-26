@@ -20,7 +20,7 @@ def execute_workflow():
         executor = WorkflowExecutor(workflow_data)
         result = executor.execute()
         
-        logger.info(f"Execution result: {result}")
+        # logger.info(f"Execution result: {result}")
 
         if result["status"] == "error":
             return jsonify({"status": "error", "message": result["message"]})

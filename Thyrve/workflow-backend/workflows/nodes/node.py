@@ -78,4 +78,7 @@ class Node(ABC):
     
     @final
     def set_in_handl(self, in_handle):
+        '''
+        :param 设置其进入的handle
+        '''
         self._in_handle = in_handle

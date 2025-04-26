@@ -136,7 +136,6 @@ class WorkflowExecutor:
         
 
     def execute_node(self, node_id):
-        logger.info(f"Executing node: {node_id}")
         cur_node = self.node_instances[node_id]
         result = cur_node.run()
         next = cur_node.get_next()
@@ -158,7 +157,7 @@ class WorkflowExecutor:
 
             while next_node is not None:
                 # 判断当前节点是否被实例化
-                print("cur_node:",cur_node)
+                
                 if cur_node not in self.node_instances:
                     self.node_instances[cur_node] = self.factory.create_node_instance(cur_node)
                 

@@ -1,0 +1,11 @@
+flask==3.0.2
+flask-cors==4.0.0
+pillow==10.2.0
+opencv-python==4.9.0.80
+PyMuPDF==1.23.26
+pandas==2.2.1
+openpyxl==3.1.2
+networkx==3.2.1
+werkzeug==3.0.1
+numpy==1.26.4
+python-docx==1.1.0

@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.4.0",
+    "live-server": "^1.2.2"
+  },
+  "scripts": {
+  "dev": "live-server .\\..\\workflow-frontend\\public --port=3030 --open=/index.html",
+  "build": "echo '无需构建步骤' && exit 0"
+}
+}

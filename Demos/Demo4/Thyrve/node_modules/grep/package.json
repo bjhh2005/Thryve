@@ -1,0 +1,24 @@
+{
+  "name" : "grep",
+  "description" : "Grep.js",
+  "version" : "0.1.0",
+  "author": "Nic da Costa",
+  "contributors": [ 
+    { "name": "Nic da Costa", "email": "" },
+    { "name": "Divan Visagie", "email": "visagiedivan@gmail.com" }
+  ],
+  "keywords" : [ "Grep" ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicdaCosta/grep.js"
+  },
+  "main" : "./grep",
+  "scripts" : { "test" : "grunt nodeunit" },
+  "engines": { "node": ">= 0.6.x" },
+  "devDependencies": {
+    "grunt-contrib-jshint": "0.6.x",
+    "grunt-contrib-nodeunit": "0.2.x",
+    "grunt-contrib-watch": "0.4.x",
+    "grunt": "0.4.x"
+  }
+}

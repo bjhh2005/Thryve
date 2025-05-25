@@ -1,0 +1,49 @@
+# 后端 Python
+workflow-backend/venv/
+workflow-backend/__pycache__/
+workflow-backend/*/__pycache__/
+workflow-backend/*/*/__pycache__/
+workflow-backend/*.pyc
+workflow-backend/*/*.pyc
+workflow-backend/*/*/*.pyc
+
+# 前端
+workflow-frontend/node_modules/
+workflow-frontend/.pnp
+workflow-frontend/.pnp.js
+workflow-frontend/coverage/
+workflow-frontend/build/
+workflow-frontend/dist/
+
+# Tauri
+workflow-tauri/target/
+workflow-tauri/node_modules/
+workflow-tauri/dist/
+workflow-tauri/src-tauri/.rpt2_cache
+workflow-tauri/src-tauri/tauri.conf.local.json
+
+# 日志
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 环境文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.project
+
+# 系统文件
+.DS_Store
+Thumbs.db
